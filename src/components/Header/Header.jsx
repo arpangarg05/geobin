@@ -57,7 +57,7 @@ function Header() {
                         {navItems.map((item) => (
                             item.active ? (
                                 <li key={item.name}>
-                                    <a href={item.slug} className='text-sm font-semibold text-gray-800 hover:text-gray-900'>{item.name}</a>
+                                    <Link to={item.slug} className='text-sm font-semibold text-gray-800 hover:text-gray-900'>{item.name}</Link>
                                 </li>
                             ) : null
                         ))}
