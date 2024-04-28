@@ -2,9 +2,11 @@ import React, {useState} from 'react'
 import authService from '../appwrite/auth'
 import {Link ,useNavigate} from 'react-router-dom'
 import {login} from '../store/authSlice'
-import {Button, Input, Logo} from './index.js'
+import {Button, Input} from './index.js'
 import {useDispatch} from 'react-redux'
 import {useForm} from 'react-hook-form'
+import {Select} from './index.js'
+import Logo from './Logo.jsx'
 
 function Signup() {
     const navigate = useNavigate()
@@ -30,7 +32,7 @@ function Signup() {
     <div className="flex items-center justify-center">
             <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
             <span className="inline-block w-full max-w-[100px]">
-                        <Logo width="100%" />
+                <Logo width='100px' height='100px' />
                     </span>
                 <h2 className="text-center text-2xl font-bold leading-tight">Sign up to create account</h2>
                 <p className="mt-2 text-center text-base text-black/60">
@@ -71,6 +73,12 @@ function Signup() {
                         placeholder="Enter your password"
                         {...register("password", {
                             required: true,})}
+                        />
+                        <Select
+                            options={["Grievant", "NGO"]}
+                            label="userType"
+                            className="mb-4"
+                            // {...register("userType", { required: true })}
                         />
                         <Button type="submit" className="w-full">
                             Create Account
